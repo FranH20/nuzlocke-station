@@ -1,0 +1,3 @@
+# Este es un archivo de ejemplo.
+# Coloca tu archivo real rclone.conf aquí.
+# Debe tener un remote llamado [drive] según tu script.

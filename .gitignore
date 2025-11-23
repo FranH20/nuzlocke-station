@@ -1,0 +1,12 @@
+# 1. IGNORAR SECRETOS (Tu llave de Google Drive)
+config_rclone/rclone.conf
+
+# 2. IGNORAR DATOS (Tus partidas y ROMs)
+data/
+roms/
+saves/
+
+# 3. Ignorar archivos de sistema/IDE
+.DS_Store
+.vscode/
+.idea/

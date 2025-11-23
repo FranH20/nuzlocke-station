@@ -1,0 +1,19 @@
+services:
+  nuzlocke-station:
+    build: .  # Construye localmente en cada máquina para evitar problemas de CPU (ARM vs x86)
+    container_name: nuzlocke-station
+    security_opt:
+      - seccomp:unconfined
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Lima
+    volumes:
+      # Montamos la carpeta de config (para que rclone pueda actualizar el token)
+      - ./config_rclone:/config/rclone_conf
+      # Montamos el script (para que puedas editarlo en Windows/Mac si quieres)
+      - ./sync-daemon.sh:/defaults/sync-daemon.sh
+    ports:
+      - 3000:3000
+    shm_size: "1gb"
+    restart: unless-stopped
